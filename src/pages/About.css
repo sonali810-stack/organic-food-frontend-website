@@ -1,0 +1,361 @@
+.about-page {
+  background-color: #fafaf8;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #d4e3d0 0%, #c8dcc4 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  color: #2d4a2b;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  color: #5a7a58;
+  font-size: 1.3rem;
+}
+
+.about-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+}
+
+.our-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.section-content h2 {
+  font-size: 2.5rem;
+  color: #2d4a2b;
+  margin-bottom: 1.5rem;
+}
+
+.section-content p {
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.values-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+}
+
+.values-section h2,
+.farmers-section h2,
+.testimonials-section h2,
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  color: #2d4a2b;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+}
+
+.value-icon {
+  font-size: 3rem;
+  color: #5a7a58;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  color: #2d4a2b;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.value-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Farmers Section */
+.farmers-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+}
+
+.farmers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.farmer-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.farmer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.farmer-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.farmer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.farmer-card:hover .farmer-image img {
+  transform: scale(1.05);
+}
+
+.farmer-info {
+  padding: 1.5rem;
+}
+
+.farmer-info h3 {
+  color: #2d4a2b;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.farm-name {
+  color: #5a7a58;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.farm-location {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.inline-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.specialty {
+  color: #2d4a2b;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.farmer-message {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #5a7a58;
+}
+
+.farmer-message p {
+  color: #6b7280;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.customer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer-info h4 {
+  color: #2d4a2b;
+  margin-bottom: 0.3rem;
+}
+
+.rating {
+  font-size: 0.9rem;
+}
+
+.verified-badge {
+  background-color: #10b981;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.testimonial-text {
+  color: #6b7280;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefit {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.benefit h3 {
+  color: #2d4a2b;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.benefit p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, #d4e3d0 0%, #c8dcc4 100%);
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 4rem auto;
+  border-radius: 12px;
+}
+
+.stat h3 {
+  color: #2d4a2b;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.stat p {
+  color: #5a7a58;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 968px) {
+  .our-story {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .values-section h2,
+  .farmers-section h2,
+  .testimonials-section h2,
+  .why-choose-us h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
