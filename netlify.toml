@@ -1,8 +1,5 @@
 # Netlify configuration for React frontend
 [build]
-  # Directory where package.json is located
-  base = "organic-food-website"
-  
   # Command to build the app
   command = "npm run build"
   
