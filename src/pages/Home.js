@@ -16,7 +16,7 @@ const seasonalCollections = [
   {
     title: 'Leafy Greens Crate',
     blurb: 'Spinach, kale, and microgreens bundled for smoothies & salads.',
-    image: 'https://images.unsplash.com/photo-1506806732259-39c2d0268443?w=800&h=600&fit=crop',
+    image: 'https://plus.unsplash.com/premium_photo-1664475322361-344e9b6bce15?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TGVhZnklMjBHcmVlbnMlMjBDcmF0ZXxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     title: 'Citrus Grove Picks',
@@ -31,7 +31,7 @@ const seasonalCollections = [
   {
     title: 'Breakfast Fruit Bowl',
     blurb: 'Papaya, berries, and bananas ready for the morning table.',
-    image: 'https://images.unsplash.com/photo-1514996937319-344454492b37?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1646343585679-8eb70482f9c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QnJlYWtmYXN0JTIwRnJ1aXQlMjBCb3dsfGVufDB8fDB8fHww',
   },
 ];
 
@@ -100,7 +100,7 @@ function Home() {
 
       <section className="promise-section">
         <div className="promise-image" role="presentation">
-          <img src="https://images.unsplash.com/photo-1506086679524-493c64fdfaa6?w=900&h=900&fit=crop" alt="Farmers harvesting fresh produce" />
+          <img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZhcm1pbmd8ZW58MHx8MHx8fDA%3D" alt="Farmers harvesting fresh produce" />
         </div>
         <div className="promise-details">
           <span className="promise-badge">Farm-to-Family Promise</span>

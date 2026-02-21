@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FiSearch, FiUser, FiShoppingCart, FiMenu, FiX, FiHeart } from 'react-icons/fi';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiSearch, FiUser, FiShoppingCart, FiMenu, FiX, FiHeart, FiLogOut, FiPackage } from 'react-icons/fi';
+import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 import './Navbar.css';
 
-function Navbar({ user, cartCount = 0, wishlistCount = 0 }) {
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const { user, logout } = useAuth();
+  const { getCartCount } = useCart();
+  const { getWishlistCount } = useWishlist();
+  const navigate = useNavigate();
+
+  const cartCount = getCartCount();
+  const wishlistCount = getWishlistCount();
+
+  const handleLogout = () => {
+    logout();
+    setShowUserMenu(false);
+    navigate('/');
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="logo">🌿 ORGAMIC</Link>
-        
+
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
@@ -21,9 +38,24 @@ function Navbar({ user, cartCount = 0, wishlistCount = 0 }) {
         <div className="nav-icons">
           <button className="icon-btn"><FiSearch /></button>
           {user ? (
-            <div className="user-info">
-              <FiUser />
-              <span>{user.name}</span>
+            <div className="user-dropdown">
+              <button
+                className="user-info"
+                onClick={() => setShowUserMenu(!showUserMenu)}
+              >
+                <FiUser />
+                <span>{user.name}</span>
+              </button>
+              {showUserMenu && (
+                <div className="user-menu">
+                  <Link to="/orders" onClick={() => setShowUserMenu(false)}>
+                    <FiPackage /> My Orders
+                  </Link>
+                  <button onClick={handleLogout}>
+                    <FiLogOut /> Logout
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <Link to="/login" className="icon-btn"><FiUser /></Link>

@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import './Login.css';
 
-function Login({ setUser }) {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simple mock authentication
-    setUser({ name: email.split('@')[0], email });
-    navigate('/');
+    setError('');
+    setLoading(true);
+
+    try {
+      const result = await login({ email, password });
+
+      if (result.success) {
+        // User is already set in AuthContext by the login function
+        navigate('/');
+      } else {
+        setError(result.error || 'Login failed. Please try again.');
+      }
+    } catch (err) {
+      setError('An unexpected error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -23,27 +41,32 @@ function Login({ setUser }) {
         <div className="auth-form-wrapper">
           <h2>Welcome Back</h2>
           <p>Login to your account</p>
-          
+
+          {error && <div className="error-message">{error}</div>}
+
           <form onSubmit={handleSubmit} className="auth-form">
             <div className="form-group">
               <label>Email Address</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                required 
+                required
+                disabled={loading}
               />
             </div>
-            
+
             <div className="form-group">
               <label>Password</label>
-              <input 
-                type="password" 
+              <input
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                required 
+                required
+                minLength="6"
+                disabled={loading}
               />
             </div>
 
@@ -54,7 +77,13 @@ function Login({ setUser }) {
               <a href="#" className="forgot-link">Forgot password?</a>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-full">Login</button>
+            <button
+              type="submit"
+              className="btn btn-primary btn-full"
+              disabled={loading}
+            >
+              {loading ? 'Logging in...' : 'Login'}
+            </button>
           </form>
 
           <div className="auth-footer">
@@ -67,3 +96,4 @@ function Login({ setUser }) {
 }
 
 export default Login;
+

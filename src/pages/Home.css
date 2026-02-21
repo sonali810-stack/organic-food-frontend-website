@@ -373,13 +373,14 @@
 }
 
 .promise-list li::before {
-  content: '\\2713';
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
   color: #f4c430;
   font-weight: 700;
 }
+
 
 .cta-panel {
   background: linear-gradient(135deg, rgba(35, 67, 41, 0.95), rgba(19, 43, 26, 0.9));
@@ -468,4 +469,3 @@
     font-size: 2rem;
   }
 }
-
