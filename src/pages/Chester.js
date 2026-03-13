@@ -84,9 +84,9 @@ function Chester() {
       <section className="chester-intro">
         <h2>What is CHESTER?</h2>
         <p>
-          CHESTER is our premium experiential platform that brings you closer to organic farming. 
-          From farm-to-table dinners to hands-on workshops, experience the real farm life and connect 
-          with the farmers who grow your food. Every experience is curated to give you authentic insights 
+          CHESTER is our premium experiential platform that brings you closer to organic farming.
+          From farm-to-table dinners to hands-on workshops, experience the real farm life and connect
+          with the farmers who grow your food. Every experience is curated to give you authentic insights
           into organic agriculture and sustainable living.
         </p>
       </section>
@@ -112,7 +112,7 @@ function Chester() {
                     <span key={idx} className="highlight">{highlight}</span>
                   ))}
                 </div>
-                <button 
+                <button
                   className="btn btn-primary"
                   onClick={() => setSelectedEvent(event)}
                 >

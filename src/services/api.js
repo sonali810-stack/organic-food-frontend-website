@@ -5,7 +5,26 @@
 
 // Base URL of your backend server
 // Automatically uses production URL when deployed, localhost when developing
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const DEFAULT_API_URL = 'http://localhost:5000/api';
+
+const normalizeApiUrl = (rawUrl) => {
+    const value = (rawUrl || '').trim();
+
+    if (!value) {
+        return DEFAULT_API_URL;
+    }
+
+    const withoutTrailingSlash = value.replace(/\/+$/, '');
+
+    // Allow users to set either https://api.example.com or https://api.example.com/api
+    if (withoutTrailingSlash.endsWith('/api')) {
+        return withoutTrailingSlash;
+    }
+
+    return `${withoutTrailingSlash}/api`;
+};
+
+const API_URL = normalizeApiUrl(process.env.REACT_APP_API_URL);
 
 // ============================================
 // HELPER FUNCTIONS
