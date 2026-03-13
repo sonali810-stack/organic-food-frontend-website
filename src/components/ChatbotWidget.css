@@ -1,7 +1,25 @@
-.chatbot-launcher {
+.chatbot-launcher-wrap {
   position: fixed;
   right: 22px;
   bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1500;
+}
+
+.chatbot-launcher-label {
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(35, 67, 41, 0.92);
+  color: #f6faf5;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 24px rgba(35, 67, 41, 0.28);
+}
+
+.chatbot-launcher {
   width: 60px;
   height: 60px;
   border: none;
@@ -14,11 +32,70 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 20px 36px rgba(35, 67, 41, 0.35);
-  z-index: 1500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .chatbot-launcher:hover {
   transform: translateY(-2px);
+}
+
+.chatbot-launcher.is-buzzing {
+  animation: launcher-buzz 2.8s ease-in-out infinite;
+}
+
+.chatbot-launcher.is-buzzing::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(244, 196, 48, 0.5);
+  animation: launcher-ring 2.8s ease-out infinite;
+}
+
+.chatbot-launcher.is-open {
+  animation: none;
+}
+
+@keyframes launcher-buzz {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  76% {
+    transform: translateY(-2px) rotate(-6deg) scale(1.02);
+  }
+
+  80% {
+    transform: translateY(-2px) rotate(6deg) scale(1.03);
+  }
+
+  84% {
+    transform: translateY(-1px) rotate(-5deg) scale(1.02);
+  }
+
+  88% {
+    transform: translateY(0) rotate(0deg) scale(1.02);
+  }
+}
+
+@keyframes launcher-ring {
+  0%,
+  65% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  75% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.28);
+  }
 }
 
 .chatbot-panel {
@@ -183,9 +260,14 @@
 }
 
 @media (max-width: 720px) {
-  .chatbot-launcher {
+  .chatbot-launcher-wrap {
     right: 14px;
     bottom: 14px;
+  }
+
+  .chatbot-launcher-label {
+    font-size: 0.74rem;
+    padding: 0.32rem 0.68rem;
   }
 
   .chatbot-panel {

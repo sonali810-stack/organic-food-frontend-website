@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiSearch, FiUser, FiShoppingCart, FiMenu, FiX, FiHeart, FiLogOut, FiPackage, FiMessageCircle } from 'react-icons/fi';
+import { FiSearch, FiUser, FiShoppingCart, FiMenu, FiX, FiHeart, FiLogOut, FiPackage } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -33,14 +33,10 @@ function Navbar() {
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
           <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link to="/chester" onClick={() => setIsMenuOpen(false)}>Chester</Link>
-          <Link to="/assistant" onClick={() => setIsMenuOpen(false)}>AI Assistant</Link>
         </div>
 
         <div className="nav-icons">
           <button className="icon-btn"><FiSearch /></button>
-          <Link to="/assistant" className="icon-btn assistant-icon" aria-label="Open AI assistant">
-            <FiMessageCircle />
-          </Link>
           {user ? (
             <div className="user-dropdown">
               <button

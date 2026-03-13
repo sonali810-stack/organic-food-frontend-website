@@ -60,14 +60,17 @@ function ChatbotWidget() {
 
     return (
         <>
-            <button
-                className="chatbot-launcher"
-                type="button"
-                aria-label={isOpen ? 'Close chat' : 'Open chat'}
-                onClick={() => setIsOpen((prev) => !prev)}
-            >
-                {isOpen ? <FiX /> : <FiMessageCircle />}
-            </button>
+            <div className="chatbot-launcher-wrap">
+                <span className="chatbot-launcher-label">AI Assistant</span>
+                <button
+                    className={`chatbot-launcher ${isOpen ? 'is-open' : 'is-buzzing'}`}
+                    type="button"
+                    aria-label={isOpen ? 'Close chat' : 'Open chat'}
+                    onClick={() => setIsOpen((prev) => !prev)}
+                >
+                    {isOpen ? <FiX /> : <FiMessageCircle />}
+                </button>
+            </div>
 
             <aside className={`chatbot-panel ${isOpen ? 'open' : ''}`}>
                 <header className="chatbot-header">
