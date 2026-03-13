@@ -519,6 +519,39 @@ export const getOrders = async () => {
     }
 };
 
+// ============================================
+// AI CHAT APIs
+// ============================================
+
+/**
+ * Send a message to the AI assistant
+ * @param {string} message - User message
+ * @param {Array} history - Recent chat messages
+ * @returns {Promise} - AI reply and suggested questions
+ */
+export const sendChatMessage = async (message, history = []) => {
+    try {
+        const response = await fetch(`${API_URL}/ai/chat`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message, history }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || 'Failed to get chatbot response');
+        }
+
+        return data.data;
+    } catch (error) {
+        console.error('AI chat error:', error);
+        throw error;
+    }
+};
+
 /**
  * Get single order by ID
  * @param {string} orderId - Order ID

@@ -14,6 +14,8 @@ import Signup from './pages/Signup';
 import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
 import Orders from './pages/Orders';
+import AIAssistant from './pages/AIAssistant';
+import ChatbotWidget from './components/ChatbotWidget';
 import './App.css';
 
 
@@ -35,7 +37,9 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/orders" element={<Orders />} />
+                <Route path="/assistant" element={<AIAssistant />} />
               </Routes>
+              <ChatbotWidget />
               <Footer />
             </div>
           </Router>

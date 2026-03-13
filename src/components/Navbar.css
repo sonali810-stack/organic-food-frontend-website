@@ -223,6 +223,18 @@
   position: relative;
 }
 
+.assistant-icon {
+  width: 42px;
+  height: 42px;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(106, 156, 110, 0.12);
+}
+
+.assistant-icon:hover {
+  background: rgba(106, 156, 110, 0.2);
+}
+
 .badge {
   position: absolute;
   top: -8px;
