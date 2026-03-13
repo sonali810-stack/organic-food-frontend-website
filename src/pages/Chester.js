@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMapPin, FiCalendar, FiUsers, FiArrowRight } from 'react-icons/fi';
+import { FiMapPin, FiCalendar, FiArrowRight } from 'react-icons/fi';
 import './Chester.css';
 
 function Chester() {
